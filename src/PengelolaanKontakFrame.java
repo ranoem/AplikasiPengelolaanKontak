@@ -82,12 +82,16 @@ public class PengelolaanKontakFrame extends javax.swing.JFrame {
             }
         });
         
+        // Add an ItemListener to the JComboBox
         categoryBox.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
-                // Periksa apakah item dipilih
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    String selectedItem = (String) categoryBox.getSelectedItem();
+                    // Get the selected value from JComboBox
+                    String selectedCategory = (String) categoryBox.getSelectedItem();
+
+                    // Update the JList to reflect the selected category
+                    listKategori.setSelectedValue(selectedCategory, true);
                 }
             }
         });
